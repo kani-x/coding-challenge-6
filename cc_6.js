@@ -105,3 +105,22 @@ function createExpenseTracker() {
 let tracker = createExpenseTracker();
 tracker(200);  // Expected output: "Total Expenses: $200"
 tracker(150);  // Expected output: "Total Expenses: $350"
+
+// Task 8: Employee Promotion Evaluation
+
+// Recursive function to calculate years to promotion
+function calculateYearsToPromotion(employeeLevel) {
+    if (employeeLevel >= 10) {
+        console.log(`Years to Level 10: 0`);
+        return;
+    }
+    const yearsRemaining = calculateYearsToPromotion(employeeLevel + 1); // Recursively calculate next level
+    if (yearsRemaining === undefined) {
+        return 2; // Each promotion takes 2 years
+    }
+    return yearsRemaining + 2;
+}
+
+// Test data
+console.log(calculateYearsToPromotion(7)); // Expected output: "Years to Level 10: 6"
+console.log(calculateYearsToPromotion(5)); // Expected output: "Years to Level 10: 10"
